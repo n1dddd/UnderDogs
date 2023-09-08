@@ -1,0 +1,9 @@
+.allFolders {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .folderIcon {
+    display: flex;
+  }
+}
