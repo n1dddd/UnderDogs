@@ -1,8 +1,8 @@
 import React from 'react'
 import Draggable from "react-draggable";
 import styles from "./FolderIcon.module.scss"
-import openedFolder from "/icons/icons8-opened-folder-160.png"
-import closedFolder from "/icons/icons8-folder-160.png"
+import openedFolder from "/icons/openFolder.png"
+import closedFolder from "/icons/closedFolder.png"
 
 const FolderIcon = () => {
     const didClick = (e) => {
