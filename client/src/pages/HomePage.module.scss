@@ -1,23 +1,13 @@
 .HomePageContainer {
   z-index: 0;
+  display: flex;
+  position: absolute;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .bgimg {
-    z-index: -1;
-    display: flex;
-    position: absolute;
-    opacity: 70%;
-    filter: drop-shadow(16px 16px 10px rgb(129, 129, 129));
-    width: 250px;
-    height: 250px;
-    @media only screen and (min-width: 900px) {
-      display: absolute;
-      width: 500px;
-      height: 500px;
-    }
-  }
+  background-image: url("highQualityHappy.png");
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 70%;
+  filter: drop-shadow(16px 16px 10px rgb(129, 129, 129));
 }
