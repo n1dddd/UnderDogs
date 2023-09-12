@@ -10,6 +10,7 @@
     text-align: center;
     cursor: pointer;
     .folderIcon {
+      -webkit-user-drag: none;
       display: flex;
       width: 110px;
       height: 110px;
