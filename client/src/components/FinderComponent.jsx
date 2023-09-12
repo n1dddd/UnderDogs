@@ -9,7 +9,7 @@ const FinderComponent = () => {
         <Draggable>
             <div className={styles.finderCard}>
                 <div className={styles.finderCardHeader}>
-                    <img src={circle} className={styles.exitCircle} onClick={() => setFinderClose()} />
+                    <img src={circle} className={styles.exitCircle} onClick={() => setFinderClose()} onTouchStart={() => setFinderClose()} />
                     <p className={styles.categoriesText}>Categories</p>
                 </div>
                 <div className={styles.finderCardBody}></div>
