@@ -8,8 +8,9 @@
     overflow-wrap: break-word;
     text-align: center;
     cursor: grab;
-    user-select: none;
     .folderIcon {
+      -webkit-user-drag: none;
+      user-select: none;
       display: flex;
       width: 110px;
       height: 110px;
