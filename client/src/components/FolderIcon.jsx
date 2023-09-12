@@ -19,7 +19,7 @@ const FolderIcon = () => {
     return (
         <div className={styles.allFolders}>
             <Draggable>
-                <div className={styles.productContainer} onDoubleClick={() => setFinderOpen()}>
+                <div className={styles.productContainer} onClick={() => setFinderOpen()}>
                     <img src={closedFolder} onMouseOver={e => (e.currentTarget.src = openedFolder)} onMouseOut={e => (e.currentTarget.src = closedFolder)} className={styles.folderIcon} />
                     <p>mayze #dizzy newjazz (loopkit + midi & flps) [$14.98]</p>
                 </div>
