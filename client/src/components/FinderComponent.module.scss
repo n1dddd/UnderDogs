@@ -1,0 +1,32 @@
+.finderCard {
+  position: absolute;
+  width: 350px;
+  height: 600px;
+  background-color: hsla(127, 4%, 60%, 0.95);
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.25fr 2.75fr;
+  .finderCardHeader {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .exitCircle {
+      width: 20px;
+      height: 20px;
+    }
+    .categoriesText {
+      margin-top: 40px;
+    }
+  }
+  .finderCardBody {
+    background-color: hsla(127, 4%, 60%, 1);
+  }
+}
