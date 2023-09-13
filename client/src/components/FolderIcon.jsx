@@ -10,20 +10,19 @@ const FolderIcon = () => {
     const finder = useFinderStore((state) => state.isFinderOpen)
     console.log(useFinderStore((state) => state.isFinderOpen))
 
-    if (finder) {
-        return (
-            <FinderComponent />
-        )
-    }
     return (
-        <div className={styles.allFolders}>
-            <Draggable cancel={styles.productContainer}>
-                <div className={styles.productContainer} onDoubleClick={() => setFinderOpen()} onTouchStart={() => setFinderOpen()}>
-                    <img src={closedFolder} className={styles.folderIcon} />
-                    <p>mayze #dizzy newjazz (loopkit + midi & flps) [$14.98]</p>
-                </div>
-            </Draggable>
-        </div >
+        <>
+            <div className={styles.allFolders}>
+                <Draggable cancel={styles.productContainer}>
+                    <div className={styles.productContainer} onDoubleClick={() => setFinderOpen()} onTouchStart={() => setFinderOpen()}>
+                        <img src={closedFolder} className={styles.folderIcon} />
+                        <p>mayze #dizzy newjazz (loopkit + midi & flps) [$14.98]</p>
+                    </div>
+                </Draggable>
+
+            </div >
+            {finder && <FinderComponent />}
+        </>
     )
 }
 
