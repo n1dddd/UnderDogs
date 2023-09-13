@@ -10,12 +10,12 @@
   bottom: 0;
   margin: auto;
   display: grid;
-  grid-template-columns: 1.25fr 2.75fr;
+  grid-template-columns: 1fr 4fr;
   @media only screen and (min-width: 900px) {
     width: 900px;
     height: 600px;
   }
-  .finderCardHeader {
+  .finderCardSideBar {
     margin-top: 20px;
     margin-left: 10px;
     height: 90%;
@@ -29,7 +29,6 @@
     .categoriesText {
       margin-top: 40px;
       @media only screen and (min-width: 900px) {
-        margin-left: 30px;
         font-size: 1.5rem;
       }
     }
