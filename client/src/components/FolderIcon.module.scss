@@ -1,19 +1,29 @@
 .allFolders {
+  flex-wrap: wrap;
   z-index: 1;
-  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  @media only screen and (min-width: 900px) {
+    width: 26%;
+  }
   .productContainer {
     display: flex;
-    position: absolute;
+    margin: 0 0 0 0;
     flex-direction: column;
-    align-items: center;
-    overflow-wrap: break-word;
     text-align: center;
     cursor: pointer;
+    .categorySubHeader {
+      font-size: 0.8rem;
+      @media only screen and (min-width: 900px) {
+        font-size: 1.5rem;
+      }
+    }
     .folderIcon {
       -webkit-user-drag: none;
       display: flex;
-      width: 110px;
-      height: 110px;
+      width: 100px;
+      height: 100px;
       @media only screen and (min-width: 900px) {
         width: 200px;
         height: 200px;
