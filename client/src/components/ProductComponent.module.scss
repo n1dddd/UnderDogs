@@ -3,10 +3,9 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  gap: 3rem 0rem;
-  .productFileIcon {
-    width: 75px;
-    height: 75px;
+  gap: 2rem 0rem;
+  @media only screen and (min-width: 900px) {
+    gap: 0rem 0rem;
   }
   .productContainer {
     display: flex;
@@ -14,8 +13,18 @@
     width: 50%;
     align-items: center;
     text-align: center;
-    gap: 1rem 0rem;
+    gap: 0.25rem 0rem;
+    filter: drop-shadow(16px 16px 10px rgb(80, 79, 79));
+    .productFileIcon {
+      width: 75px;
+      height: 75px;
+      @media only screen and (min-width: 900px) {
+        width: 100px;
+        height: 100px;
+      }
+    }
     .productName {
+      width: 40%;
       font-size: 0.5rem;
       @media only screen and (min-width: 900px) {
         font-size: 1rem;
