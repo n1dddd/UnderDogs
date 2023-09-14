@@ -4,24 +4,33 @@ import Draggable from "react-draggable";
 import styles from "./FolderIcon.module.scss"
 import closedFolder from "/icons/closedFolder.png"
 import FinderComponent from './FinderComponent';
+import { useCategoriesStore } from '../stores/categoriesStore.js';
+
 
 const FolderIcon = () => {
     const setFinderOpen = useFinderStore((state) => state.openFinder)
     const finder = useFinderStore((state) => state.isFinderOpen)
     console.log(useFinderStore((state) => state.isFinderOpen))
+    const statefulCategories = useCategoriesStore((state) => state.categories)
 
+    const productCategories = statefulCategories.map((category, index) => {
+        return (
+            <>
+                <Draggable>
+                    <div className={styles.productContainer} onDoubleClick={() => setFinderOpen()} onTouchStart={() => setFinderOpen()}>
+                        <img src={closedFolder} className={styles.folderIcon} />
+                        <h2 className={styles.categorySubHeader} key={index}>{category}</h2>
+                    </div>
+                </Draggable>
+            </>
+        )
+    })
     return (
         <>
             <div className={styles.allFolders}>
-                <Draggable cancel={styles.productContainer}>
-                    <div className={styles.productContainer} onDoubleClick={() => setFinderOpen()} onTouchStart={() => setFinderOpen()}>
-                        <img src={closedFolder} className={styles.folderIcon} />
-                        <p>mayze #dizzy newjazz (loopkit + midi & flps) [$14.98]</p>
-                    </div>
-                </Draggable>
-
+                {productCategories}
+                {finder && <FinderComponent />}
             </div >
-            {finder && <FinderComponent />}
         </>
     )
 }
