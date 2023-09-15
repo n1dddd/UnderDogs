@@ -10,12 +10,13 @@ const FinderComponentCategories = () => {
     const productCategories = statefulCategories.map((category, index) => {
         if (activeCategory === category) {
             return (
-                <h1 key={index} className={styles.categoryName__active} onClick={() => setActiveCategory(category)}>{category}</h1>
+                <h1 key={index} className={styles.categoryName__active} onClick={() => setActiveCategory(category)}
+                    onTouchStart={() => setActiveCategory(category)}>{category}</h1>
             )
 
         } else {
             return (
-                <h1 key={index} className={styles.categoryName} onClick={() => setActiveCategory(category)}>{category}</h1>
+                <h1 key={index} className={styles.categoryName} onClick={() => setActiveCategory(category)} onTouchStart={() => setActiveCategory(category)}>{category}</h1>
             )
         }
     })
