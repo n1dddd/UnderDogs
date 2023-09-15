@@ -23,7 +23,7 @@ const FolderIcon = () => {
         return (
             <>
                 <Draggable>
-                    <div className={styles.productContainer} onDoubleClick={() => setFinderSetCategory(category)} onTouchStart={() => setFinderOpen()}>
+                    <div className={styles.productContainer} onDoubleClick={() => setFinderSetCategory(category)} onTouchStart={() => setFinderSetCategory(category)}>
                         <img src={closedFolder} className={styles.folderIcon} />
                         <h2 className={styles.categorySubHeader} key={index}>{category}</h2>
                     </div>
