@@ -9,19 +9,25 @@ import { useCategoriesStore } from '../stores/categoriesStore.js';
 
 const FolderIcon = () => {
     const setFinderOpen = useFinderStore((state) => state.openFinder)
+    const setActiveCategory = useCategoriesStore((state) => state.setActiveCategory)
     const finder = useFinderStore((state) => state.isFinderOpen)
     console.log(useFinderStore((state) => state.isFinderOpen))
     const statefulCategories = useCategoriesStore((state) => state.categories)
+
+    const setFinderSetCategory = (productCategory) => {
+        setFinderOpen();
+        setActiveCategory(productCategory);
+    }
 
     const productCategories = statefulCategories.map((category, index) => {
         return (
             <>
                 <Draggable>
-                    <div className={styles.productContainer} onDoubleClick={() => setFinderOpen()} onTouchStart={() => setFinderOpen()}>
+                    <div className={styles.productContainer} onDoubleClick={() => setFinderSetCategory(category)} onTouchStart={() => setFinderOpen()}>
                         <img src={closedFolder} className={styles.folderIcon} />
                         <h2 className={styles.categorySubHeader} key={index}>{category}</h2>
                     </div>
-                </Draggable>
+                </Draggable >
             </>
         )
     })
