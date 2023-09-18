@@ -1,0 +1,15 @@
+.cartHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  &__active {
+    font-size: 1rem;
+    background-color: hsla(0, 0%, 100%, 0.6);
+    @media only screen and (min-width: 900px) {
+      font-size: 2rem;
+    }
+  }
+}
