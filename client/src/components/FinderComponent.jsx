@@ -1,14 +1,16 @@
 import { useFinderStore } from "../stores/finderStore"
-
+import { useCategoriesStore } from "../stores/categoriesStore";
 import styles from "./FinderComponent.module.scss";
 import Draggable from "react-draggable";
 import circle from "../assets/red_circle.png";
 import FinderComponentCategories from './FinderComponentCategories'
 import ProductComponent from "./ProductComponent";
+import CartSideBar from "./CartSideBar";
+import CartComponent from "./CartComponent";
 
 const FinderComponent = () => {
     const setFinderClose = useFinderStore((state) => state.closeFinder)
-
+    const activeCategory = useCategoriesStore((state) => state.activeCategory);
     return (
         <Draggable>
             <div className={styles.finderCard}>
@@ -16,9 +18,10 @@ const FinderComponent = () => {
                     <img src={circle} className={styles.exitCircle} onClick={() => setFinderClose()} onTouchStart={() => setFinderClose()} />
                     <h1 className={styles.categoriesText}>Categories</h1>
                     <FinderComponentCategories />
+                    <CartSideBar />
                 </div>
                 <div className={styles.finderCardBody}>
-                    <ProductComponent />
+                    {activeCategory === "cart" ? <CartComponent /> : <ProductComponent />}
                 </div>
             </div>
         </Draggable>
