@@ -17,10 +17,20 @@ function App() {
   }
   const getProductInformation = async () => {
     const querySnapshot = await getDocs(collection(db, "products"));
-    const products = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-    console.log(products);
-    setProducts(products)
+    const products = querySnapshot.docs.map(async (doc) => {
+      const pricesCollection = collection(doc.ref, "prices");
+      const priceQuerySnapshot = await getDocs(pricesCollection);
+      const productPrices = priceQuerySnapshot.docs.map((priceDoc) => {
+        return { id: doc.id, ...doc.data(), ...priceDoc.data() }
+      })
+      return productPrices;
+    })
+    Promise.all(products).then(function (results) {
+      const allProducts = results.flat();
+      setProducts(allProducts);
+    })
   }
+
 
 
 
