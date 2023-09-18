@@ -3,28 +3,32 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  gap: 2rem 0rem;
+  gap: 2rem 1rem;
   @media only screen and (min-width: 900px) {
     gap: 0rem 0rem;
   }
   .productContainer {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    margin-top: 2rem;
+    width: 60%;
     align-items: center;
     text-align: center;
-    gap: 0.25rem 0rem;
+    gap: 0.25rem;
+    border-radius: 5%;
+    background-color: hsla(0, 0%, 100%, 0.3);
     filter: drop-shadow(16px 16px 10px rgb(80, 79, 79));
     .productFileIcon {
       width: 75px;
       height: 75px;
+      margin-top: 10px;
       @media only screen and (min-width: 900px) {
         width: 100px;
         height: 100px;
       }
     }
     .productName {
-      width: 40%;
+      width: 60%;
       font-size: 0.6rem;
       @media only screen and (min-width: 900px) {
         font-size: 1rem;
