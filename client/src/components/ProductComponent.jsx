@@ -29,7 +29,7 @@ const ProductComponent = () => {
             <div key={index} className={styles.productContainer}>
                 <img className={styles.productFileIcon} src={product.images[0]} />
                 <p className={styles.productName}>{product.name}</p>
-                <p>${product.unit_amount / 100}</p>
+                <p className={styles.productPrice}>${product.unit_amount / 100}</p>
             </div>
 
         )
