@@ -9,7 +9,7 @@ const CartButtonComponent = (product) => {
     const addToCart = useCartStore((state) => state.addToCart)
     const inBag = useCartStore((state) => state.cart);
     return (
-        <div onClick={() => addToCart(product)}>
+        <div onClick={() => addToCart(product)} onTouchStart={() => addToCart(product)}>
             <img src={daBag} className={styles.addToCartIcon} onClick={() => console.log(inBag)} />
         </div>
     )
