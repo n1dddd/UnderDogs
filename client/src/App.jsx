@@ -5,6 +5,7 @@ import { useProductsStore } from "./stores/productsStore.js";
 import { useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase.js"
+import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -42,7 +43,9 @@ function App() {
   }, [])
 
   return (
-    <HomePage />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
   )
 }
 
