@@ -12,7 +12,6 @@
   display: grid;
   border-radius: 2%;
   grid-template-columns: 1fr 4fr;
-  filter: drop-shadow(16px 16px 10px rgb(129, 129, 129));
   @media only screen and (min-width: 900px) {
     width: 900px;
     height: 600px;
