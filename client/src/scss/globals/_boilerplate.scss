@@ -15,3 +15,15 @@ html {
   overflow: hidden;
   letter-spacing: 0.1rem;
 }
+
+#root {
+  position: absolute;
+  display: flex;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: ce;
+}
