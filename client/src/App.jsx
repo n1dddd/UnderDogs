@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase.js"
 import { Routes, Route } from 'react-router-dom';
+import SignIn from './pages/SignIn';
+import SignUp from "./pages/SignUp";
+import { AuthContextProvider } from './components/context/AuthContext';
 
 
 function App() {
@@ -43,9 +46,13 @@ function App() {
   }, [])
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-    </Routes>
+    <AuthContextProvider>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/sign_up" element={<SignUp />} />
+      </Routes>
+    </AuthContextProvider>
   )
 }
 
