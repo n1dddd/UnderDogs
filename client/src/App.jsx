@@ -8,7 +8,7 @@ import { db } from "./config/firebase.js"
 import { Routes, Route } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from "./pages/SignUp";
-import { AuthContextProvider } from './components/context/AuthContext';
+import { AuthContextProvider } from "../src/context/AuthContext"
 
 
 function App() {
