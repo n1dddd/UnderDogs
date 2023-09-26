@@ -1,12 +1,25 @@
 import React, { useState } from 'react'
 import styles from "./SignIn.module.scss"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { UserAuth } from '../context/AuthContext'
 
 const SignIn = () => {
+    const { login } = UserAuth();
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const handleSubmit = async () => {
-
+    const [error, setError] = useState('')
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('')
+        try {
+            await login(email, password);
+            navigate('/')
+        }
+        catch (e) {
+            setError(e.message);
+            console.log(e.message);
+        }
     }
     return (
         <div className={styles.authCard}>
