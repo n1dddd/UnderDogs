@@ -5,13 +5,14 @@
   flex-direction: row;
   gap: 4rem;
   @media only screen and (min-width: 900px) {
-    width: 26%;
+    width: 30%;
   }
   .productContainer {
     display: flex;
-    margin: 0 0 0 0;
+    margin: auto;
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
     cursor: pointer;
     .categorySubHeader {
       font-size: 0.8rem;
@@ -24,6 +25,22 @@
       display: flex;
       width: 100px;
       height: 100px;
+      @media only screen and (min-width: 900px) {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .loginIcon {
+      -webkit-user-drag: none;
+      display: flex;
+      width: 150px;
+      height: 150px;
+    }
+    .logoutIcon {
+      -webkit-user-drag: none;
+      display: flex;
+      width: 150px;
+      height: 150px;
       @media only screen and (min-width: 900px) {
         width: 200px;
         height: 200px;
