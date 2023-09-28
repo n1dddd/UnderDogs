@@ -25,7 +25,7 @@ function App() {
       const pricesCollection = collection(doc.ref, "prices");
       const priceQuerySnapshot = await getDocs(pricesCollection);
       const productPrices = priceQuerySnapshot.docs.map((priceDoc) => {
-        return { id: doc.id, ...doc.data(), ...priceDoc.data() }
+        return { id: doc.id, ...doc.data(), ...priceDoc.data(), priceId: priceDoc.id }
       })
       return productPrices;
     })
