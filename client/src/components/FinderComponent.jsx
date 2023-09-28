@@ -7,6 +7,7 @@ import FinderComponentCategories from './FinderComponentCategories'
 import ProductComponent from "./ProductComponent";
 import CartSideBar from "./CartSideBar";
 import CartComponent from "./CartComponent";
+import CheckoutBar from "./CheckoutBar";
 
 const FinderComponent = () => {
     const setFinderClose = useFinderStore((state) => state.closeFinder)
@@ -22,6 +23,7 @@ const FinderComponent = () => {
                 </div>
                 <div className={styles.finderCardBody}>
                     {activeCategory === "cart" ? <CartComponent /> : <ProductComponent />}
+                    {activeCategory === "cart" ? <CheckoutBar /> : null}
                 </div>
             </div>
         </Draggable>
