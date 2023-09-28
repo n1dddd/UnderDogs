@@ -2,7 +2,6 @@ import React from 'react'
 import { useCartStore } from '../stores/cartStore'
 import XSymbol from "../assets/XSymbol.png"
 import styles from "./CartComponent.module.scss"
-import CheckoutBar from './CheckoutBar'
 
 const CartComponent = () => {
     const statefulCart = useCartStore((state) => state.cart);
@@ -21,9 +20,6 @@ const CartComponent = () => {
         <><div className={styles.allProductsCheckoutContainer}>
             {productsInCart}
         </div>
-            <div>
-                {<CheckoutBar />}
-            </div>
         </>
     )
 }
