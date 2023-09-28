@@ -18,10 +18,13 @@ const CartComponent = () => {
         )
     })
     return (
-        <div className={styles.allProductsCheckoutContainer}>
+        <><div className={styles.allProductsCheckoutContainer}>
             {productsInCart}
-            {<CheckoutBar />}
         </div>
+            <div>
+                {<CheckoutBar />}
+            </div>
+        </>
     )
 }
 
