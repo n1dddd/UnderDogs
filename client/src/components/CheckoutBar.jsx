@@ -2,11 +2,14 @@ import React from 'react'
 import styles from "./CheckoutBar.module.scss"
 import getStripe from '../../lib/getStripe'
 import { useCartStore } from '../stores/cartStore';
+import { collection, getDoc, addDoc, doc, onSnapshot } from "firebase/firestore";
+import { db } from "../config/firebase.js"
+import { useUserStore } from '../stores/userStore';
 
 const CheckoutBar = () => {
 
     const statefulCart = useCartStore((state) => state.cart)
-
+    const statefulUser = useUserStore((state) => state.user)
     const getSubtotal = () => {
         const finalCart = [...statefulCart]
         let subTotalInCents = 0;
@@ -30,14 +33,22 @@ const CheckoutBar = () => {
 
     const handleCheckout = async () => {
         let cart = formatedCheckout();
-        const stripe = await getStripe();
-        const { error } = await stripe.redirectToCheckout({
-            lineItems: cart,
-            mode: 'payment',
-            successUrl: "http://localhost:5173/",
-            cancelUrl: "http://localhost:5173/"
-        });
-        console.log(error.message);
+        const newCartSession = await addDoc(collection(db, 'customers', statefulUser.uid, 'checkout_sessions'), {
+            line_items: cart,
+            mode: "payment",
+            success_url: window.location.origin,
+            cancel_url: window.location.origin,
+        })
+        const checkoutCart = onSnapshot(doc(db, "customers", statefulUser.uid, 'checkout_sessions', newCartSession.id), async (doc) => {
+            let docData = doc.data();
+            if (docData.url) {
+                const sessionId = docData.sessionId;
+                const stripe = await getStripe();
+                await stripe.redirectToCheckout({ sessionId })
+            }
+        })
+        return checkoutCart;
+
     }
     return (
         <div className={styles.checkoutBar}>
@@ -48,3 +59,4 @@ const CheckoutBar = () => {
 }
 
 export default CheckoutBar
+
