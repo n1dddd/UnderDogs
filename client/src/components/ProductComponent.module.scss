@@ -5,12 +5,12 @@
   align-content: center;
   gap: 2rem 1rem;
   @media only screen and (min-width: 900px) {
-    gap: 0rem 0rem;
+    gap: 3rem 4rem;
+    flex-wrap: nowrap;
   }
   .productContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
     width: 60%;
     align-items: center;
     text-align: center;
