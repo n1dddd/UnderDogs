@@ -3,7 +3,7 @@
   width: 350px;
   height: 600px;
   background-color: hsla(127, 4%, 60%, 0.7);
-  z-index: 2;
+  z-index: 1;
   left: 0;
   right: 0;
   top: 0;
@@ -37,7 +37,6 @@
     }
   }
   .finderCardBody {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
