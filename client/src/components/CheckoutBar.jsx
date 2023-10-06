@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "./CheckoutBar.module.scss"
 import getStripe from '../../lib/getStripe'
 import { useCartStore } from '../stores/cartStore';
-import { collection, getDoc, addDoc, doc, onSnapshot } from "firebase/firestore";
+import { collection, addDoc, doc, onSnapshot } from "firebase/firestore";
 import { db } from "../config/firebase.js"
 import { useUserStore } from '../stores/userStore';
 
