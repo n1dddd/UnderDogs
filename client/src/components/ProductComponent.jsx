@@ -22,10 +22,14 @@ const ProductComponent = () => {
         getFilteredProducts();
     }, [activeCategory])
 
+    const handleProductRedirect = (product) => {
+        navigate("/products/" + product.id)
+    }
+
     const fileComponent = statefulProducts.map((product, index) => {
         return (
-            <div onClick={() => navigate("/products" + product.name)} key={index} className={styles.productContainer}>
-                <img className={styles.productFileIcon} src={product.images[0]} />
+            <div key={index} className={styles.productContainer}>
+                <img onClick={() => handleProductRedirect(product)} className={styles.productFileIcon} src={product.images[0]} />
                 <p className={styles.productName}>{product.name}</p>
                 <p className={styles.productPrice}>${product.unit_amount / 100}</p>
                 <CartButtonComponent product={product} />
