@@ -1,9 +1,45 @@
 .displayProductContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 80%;
   height: 100vh;
+  text-align: justify;
+  .displayProductHeader {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @media only screen and (min-width: 900px) {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
   .displayImg {
-    width: 100px;
-    height: 100px;
+    display: flex;
+    width: 350px;
+    height: 350px;
+    @media only screen and (min-width: 900px) {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .displayProductDescription {
+    @media only screen and (min-width: 900px) {
+      width: 50%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    font-size: 1.5rem;
+  }
+  .displayProductPrice {
+    font-size: 1.5rem;
+    @media only screen and (min-width: 900px) {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .cartButton {
+    width: 200px;
+    height: 200px;
   }
 }
