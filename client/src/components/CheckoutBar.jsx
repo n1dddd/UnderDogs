@@ -53,7 +53,7 @@ const CheckoutBar = () => {
     return (
         <div className={styles.checkoutBar}>
             <h1 className={styles.subTotalText}>Subtotal: CAD ${getSubtotal()}</h1>
-            <button className={styles.checkoutButton} onClick={() => handleCheckout()}>Check out</button>
+            <button className={styles.checkoutButton} onClick={() => handleCheckout()} onTouchStart={() => handleCheckout()}>Check out</button>
         </div>
     )
 }
