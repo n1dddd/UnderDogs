@@ -23,11 +23,14 @@ function App() {
   const getProductInformation = async () => {
     const querySnapshot = await getDocs(collection(db, "products"));
     const products = querySnapshot.docs.map(async (doc) => {
+      console.log(doc.data());
       const pricesCollection = collection(doc.ref, "prices");
       const priceQuerySnapshot = await getDocs(pricesCollection);
       const productPrices = priceQuerySnapshot.docs.map((priceDoc) => {
-        return { id: doc.id, ...doc.data(), ...priceDoc.data(), priceId: priceDoc.id }
+        let productPriceData = priceDoc.data();
+        return { id: doc.id, ...doc.data(), unit_amount: productPriceData.unit_amount, priceId: priceDoc.id }
       })
+      console.log(productPrices)
       return productPrices;
     })
     Promise.all(products).then(function (results) {
@@ -35,11 +38,6 @@ function App() {
       setProducts(allProducts);
     })
   }
-
-
-
-
-
 
   useEffect(() => {
     getCategoryInformation();
