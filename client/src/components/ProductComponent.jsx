@@ -29,7 +29,7 @@ const ProductComponent = () => {
     const fileComponent = statefulProducts.map((product, index) => {
         return (
             <div key={index} className={styles.productContainer}>
-                <img onClick={() => handleProductRedirect(product)} className={styles.productFileIcon} src={product.images[0]} />
+                <img onClick={() => handleProductRedirect(product)} onTouchStart={() => handleProductRedirect(product)} className={styles.productFileIcon} src={product.images[0]} />
                 <p className={styles.productName}>{product.name}</p>
                 <p className={styles.productPrice}>${product.unit_amount / 100}</p>
                 <CartButtonComponent product={product} />
