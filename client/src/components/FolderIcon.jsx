@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useFinderStore } from '../stores/finderStore';
 import Draggable from "react-draggable";
@@ -10,6 +10,7 @@ import FinderComponent from './FinderComponent';
 import { useCategoriesStore } from '../stores/categoriesStore.js';
 import { useUserStore } from "../stores/userStore.js";
 import { UserAuth } from '../context/AuthContext';
+import Loading from './Loading';
 
 
 const FolderIcon = () => {
@@ -51,22 +52,33 @@ const FolderIcon = () => {
             </>
         )
     })
-    return (
-        <>
-            <div className={styles.allFolders}>
-                {productCategories}
-                {!authUser && <div onClick={() => navigate("login")} className={styles.productContainer}>
-                    <img src={logInIcon} className={styles.loginIcon} />
-                    <h2 className={styles.categorySubHeader}>Login?</h2>
-                </div>}
-                {authUser && <div onClick={handleLogout} className={styles.productContainer}>
-                    <img src={logoutIcon} className={styles.logoutIcon} />
-                    <h2 className={styles.categorySubHeader}>Logout</h2>
-                </div>}
+    if (productCategories.length != 5) {
+        return (
+            <></>
+        )
+    }
+    else {
+        return (
+            <>
+                <div className={styles.allFolders}>
+                    {productCategories}
+                    {!authUser && <div onClick={() => navigate("login")} className={styles.productContainer}>
+                        <img src={logInIcon} className={styles.loginIcon} />
+                        <h2 className={styles.categorySubHeader}>Login?</h2>
+                    </div>}
+                    {authUser && <div onClick={handleLogout} className={styles.productContainer}>
+                        <img src={logoutIcon} className={styles.logoutIcon} />
+                        <h2 className={styles.categorySubHeader}>Logout</h2>
+                    </div>}
+                </div >
                 {finder && <FinderComponent />}
-            </div >
-        </>
-    )
+            </>
+        )
+
+    }
+
+
+
 }
 
 export default FolderIcon
