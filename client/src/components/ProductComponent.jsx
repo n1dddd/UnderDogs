@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useProductsStore } from "../stores/productsStore";
 import { useCategoriesStore } from "../stores/categoriesStore";
 import styles from "./ProductComponent.module.scss";
@@ -10,6 +10,7 @@ const ProductComponent = () => {
     const statefulProducts = useProductsStore((state) => state.filteredProducts);
     const activeCategory = useCategoriesStore((state) => state.activeCategory);
     const products = useProductsStore((state) => state.products);
+    console.log(products);
     const setFilteredProducts = useProductsStore((state) => state.setFilteredProducts);
     useEffect(() => {
         const getFilteredProducts = () => {
@@ -27,23 +28,31 @@ const ProductComponent = () => {
     }
 
     const fileComponent = statefulProducts.map((product, index) => {
+        if (product.unit_amount != 0) {
+            return (
+                <div key={index} className={styles.productContainer}>
+                    <img onClick={() => handleProductRedirect(product)} onTouchStart={() => handleProductRedirect(product)} className={styles.productFileIcon} src={product.images[0]} />
+                    <p className={styles.productName}>{product.name}</p>
+                    <p className={styles.productPrice}>${product.unit_amount / 100}</p>
+                    <CartButtonComponent product={product} />
+                </div>
+            )
+        }
         return (
             <div key={index} className={styles.productContainer}>
                 <img onClick={() => handleProductRedirect(product)} onTouchStart={() => handleProductRedirect(product)} className={styles.productFileIcon} src={product.images[0]} />
                 <p className={styles.productName}>{product.name}</p>
-                <p className={styles.productPrice}>${product.unit_amount / 100}</p>
-                <CartButtonComponent product={product} />
+                <p className={styles.productPrice}>${product.unit_amount}</p>
             </div>
-
         )
-    })
+    }
+    )
     return (
-        <>
+        <Suspense fallback={null}>
             <div className={styles.allProductsContainer}>
                 {fileComponent}
-
             </div >
-        </>
+        </Suspense>
     )
 }
 
