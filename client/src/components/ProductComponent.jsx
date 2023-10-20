@@ -4,6 +4,7 @@ import { useCategoriesStore } from "../stores/categoriesStore";
 import styles from "./ProductComponent.module.scss";
 import CartButtonComponent from "./CartButtonComponent";
 import { useNavigate } from "react-router-dom";
+import DownloadButtonComponent from "./DownloadButtonComponent";
 
 const ProductComponent = () => {
     const navigate = useNavigate();
@@ -43,6 +44,7 @@ const ProductComponent = () => {
                 <img onClick={() => handleProductRedirect(product)} onTouchStart={() => handleProductRedirect(product)} className={styles.productFileIcon} src={product.images[0]} />
                 <p className={styles.productName}>{product.name}</p>
                 <p className={styles.productPrice}>${product.unit_amount}</p>
+                <DownloadButtonComponent product={product} />
             </div>
         )
     }
