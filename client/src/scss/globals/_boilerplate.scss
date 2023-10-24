@@ -1,29 +1,21 @@
 @use "../util";
-
-html {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-    linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 0.06),
-      rgba(0, 255, 0, 0.02),
-      rgba(0, 0, 255, 0.06)
-    );
-  background-size: 100% 2px, 3px 100%;
+:root,
+html,
+body {
+  box-sizing: border-box;
   font-family: util.$font;
-  overflow: hidden;
-  letter-spacing: 0.1rem;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-#root {
-  position: absolute;
-  display: flex;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  justify-content: center;
-  align-items: center;
+h1 {
+  font-size: 2.5rem;
+  @media only screen and (min-width: 900px) {
+    font-size: 5rem;
+  }
 }
