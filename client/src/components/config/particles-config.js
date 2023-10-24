@@ -172,7 +172,7 @@ const particlesConfig = {
                     value: 1
                 }
             },
-            enable: false,
+            enable: true,
             maxSpeed: 50,
             mode: "bounce",
             overlap: {
@@ -291,7 +291,7 @@ const particlesConfig = {
                 height: 1080
             },
             limit: 0,
-            value: 10
+            value: 30
         },
         opacity: {
             random: {
@@ -341,7 +341,7 @@ const particlesConfig = {
             },
             value: {
                 min: 40,
-                max: 50
+                max: 70
             },
             animation: {
                 count: 0,
@@ -424,8 +424,8 @@ const particlesConfig = {
         },
         twinkle: {
             lines: {
-                enable: false,
-                frequency: 0.05,
+                enable: true,
+                frequency: 0.1,
                 opacity: 1
             },
             particles: {
@@ -463,17 +463,17 @@ const particlesConfig = {
         },
         rotate: {
             random: {
-                enable: false,
-                minimumValue: 0
+                enable: true,
+                minimumValue: 5
             },
-            value: 0,
+            value: 10,
             animation: {
-                enable: false,
-                speed: 0,
+                enable: true,
+                speed: 2,
                 decay: 0,
                 sync: false
             },
-            direction: "clockwise",
+            direction: "random",
             path: false
         },
         orbit: {
