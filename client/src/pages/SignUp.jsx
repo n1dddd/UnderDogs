@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from "./SignUp.module.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
+import ParticlesBackground from '../components/ParticlesBackground'
 
 const SignUp = () => {
     const [email, setEmail] = useState("");
@@ -24,25 +25,30 @@ const SignUp = () => {
         }
     }
     return (
-        <div className={styles.authCard}>
-            <h1 className={styles.authCardHeader}>Sign Up</h1>
-            <form className={styles.authForm} onSubmit={handleSubmit}>
-                <div className={styles.emailPassInput}>
-                    <input onChange={(e) => setEmail(e.target.value)} type="email" className={styles.inputField}></input>
-                    <label>
-                        Email Address
-                    </label>
+        <>
+            <ParticlesBackground />
+            <section className={styles.signUpPageContainer}>
+                <div className={styles.authCard}>
+                    <h1 className={styles.authCardHeader}>Sign Up</h1>
+                    <form className={styles.authForm} onSubmit={handleSubmit}>
+                        <div className={styles.emailPassInput}>
+                            <input onChange={(e) => setEmail(e.target.value)} type="email" className={styles.inputField}></input>
+                            <label>
+                                Email Address
+                            </label>
+                        </div>
+                        <div className={styles.emailPassInput}>
+                            <input type="password" className={styles.inputField} onChange={(e) => setPassword(e.target.value)}></input>
+                            <label>
+                                Password
+                            </label>
+                        </div>
+                        <button className={styles.authButton}>Sign Up</button>
+                    </form>
+                    <p className={styles.authRoute}>Already have an account? <Link to="/login" className={styles.linkUnderline} >Sign In.</Link></p>
                 </div>
-                <div className={styles.emailPassInput}>
-                    <input type="password" className={styles.inputField} onChange={(e) => setPassword(e.target.value)}></input>
-                    <label>
-                        Password
-                    </label>
-                </div>
-                <button className={styles.authButton}>Sign Up</button>
-            </form>
-            <p className={styles.authRoute}>Already have an account? <Link to="/login" className={styles.linkUnderline} >Sign In.</Link></p>
-        </div>
+            </section>
+        </>
     )
 }
 
