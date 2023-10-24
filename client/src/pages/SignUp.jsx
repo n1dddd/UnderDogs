@@ -3,7 +3,7 @@ import styles from "./SignUp.module.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
 import ParticlesBackground from '../components/ParticlesBackground'
-
+import Banner from '../components/Banner'
 const SignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -28,6 +28,7 @@ const SignUp = () => {
         <>
             <ParticlesBackground />
             <section className={styles.signUpPageContainer}>
+                <Banner />
                 <div className={styles.authCard}>
                     <h1 className={styles.authCardHeader}>Sign Up</h1>
                     <form className={styles.authForm} onSubmit={handleSubmit}>

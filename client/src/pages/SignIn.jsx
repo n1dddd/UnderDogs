@@ -3,6 +3,7 @@ import styles from "./SignIn.module.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
 import ParticlesBackground from '../components/ParticlesBackground'
+import Banner from '../components/Banner'
 
 const SignIn = () => {
     const { login } = UserAuth();
@@ -26,6 +27,7 @@ const SignIn = () => {
         <>
             <ParticlesBackground />
             <section className={styles.loginPageContainer}>
+                <Banner />
                 <div className={styles.authCard}>
                     <h1 className={styles.authCardHeader}>Login</h1>
                     <form className={styles.authForm} onSubmit={handleSubmit}>
