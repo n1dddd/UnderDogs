@@ -4,7 +4,6 @@ import styles from "./ProductPage.module.scss"
 import { doc, getDoc, getDocs, collection } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { useProductsStore } from '../stores/productsStore';
-import ProductCartButton from '../components/ProductCartButton';
 import Loading from '../components/Loading';
 
 const ProductPage = () => {
@@ -43,7 +42,6 @@ const ProductPage = () => {
         <h1 className={styles.displayProductHeader}>{activeProduct.name}</h1>
         <p className={styles.displayProductDescription}>{activeProduct.description}</p>
         <p className={styles.displayProductPrice}>${activeProduct.unit_amount / 100}</p>
-        <ProductCartButton product={activeProduct} />
       </div >
     )
   }
