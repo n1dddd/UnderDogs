@@ -18,7 +18,7 @@
     width: 250px;
     opacity: 0.9;
     margin-top: 3rem;
-    filter: drop-shadow(16px 16px 10px rgb(129, 129, 129));
+    filter: drop-shadow(1px 1px 1px rgb(129, 129, 129));
     @media only screen and (min-width: 900px) {
       margin-top: 0;
       height: 600px;
@@ -38,7 +38,6 @@
       justify-content: center;
       background-color: hsla(181, 91%, 99%, 0.7);
       border-radius: 0.5rem;
-      filter: drop-shadow(10px 10px 1px hsla(181, 91%, 99%, 0.3));
       &:hover {
         background-color: hsla(0, 0%, 100%, 0.9);
       }
