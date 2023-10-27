@@ -10,6 +10,7 @@ import SignIn from './pages/SignIn';
 import SignUp from "./pages/SignUp";
 import { AuthContextProvider } from "../src/context/AuthContext"
 import ProductPage from './pages/ProductPage';
+import ProductsPage from './pages/ProductsPage';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
+        <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductPage />} />
       </Routes>
     </AuthContextProvider>
