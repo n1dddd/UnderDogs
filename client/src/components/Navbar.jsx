@@ -24,7 +24,7 @@ const Navbar = () => {
         return (
             <section className={styles.websiteCategories}>
                 <div className={styles.leftSideMenuBar}>
-                    <p className={styles.menuHeader}>Products</p>
+                    <p className={styles.menuHeader} onClick={() => navigate('/products')}>Products</p>
                     <p className={styles.menuHeader}>Connect</p>
                 </div>
                 <div className={styles.rightSideMenuBar} onClick={() => navigate('/login')}>
@@ -37,7 +37,7 @@ const Navbar = () => {
         return (
             <section className={styles.websiteCategories}>
                 <div className={styles.leftSideMenuBar}>
-                    <p className={styles.menuHeader}>Products</p>
+                    <p className={styles.menuHeader} onClick={() => navigate('/products')}>Products</p>
                     <p className={styles.menuHeader}>Connect</p>
                 </div>
                 <div className={styles.rightSideMenuBar} onClick={() => handleLogout()}>
