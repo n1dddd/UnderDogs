@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
 import ParticlesBackground from '../components/ParticlesBackground'
 import Banner from '../components/Banner'
+import Navbar from '../components/Navbar'
 
 const SignIn = () => {
     const { login } = UserAuth();
@@ -26,8 +27,12 @@ const SignIn = () => {
     return (
         <>
             <ParticlesBackground />
-            <section className={styles.loginPageContainer}>
+            <div className={styles.headerContainer}>
                 <Banner />
+                <Navbar />
+            </div>
+            <section className={styles.loginPageContainer}>
+
                 <div className={styles.authCard}>
                     <h1 className={styles.authCardHeader}>Login</h1>
                     <form className={styles.authForm} onSubmit={handleSubmit}>

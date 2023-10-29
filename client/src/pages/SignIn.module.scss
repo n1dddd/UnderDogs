@@ -1,10 +1,12 @@
 .loginPageContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
   width: 100vw;
   height: 100vh;
+  
   .authCard {
     display: flex;
     flex-direction: column;
@@ -50,4 +52,11 @@
       }
     }
   }
+}
+.headerContainer {
+  display: flex;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  flex-direction: column;
 }
