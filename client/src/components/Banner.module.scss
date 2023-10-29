@@ -1,13 +1,14 @@
 .scrollingBannerContainer {
-  position: fixed;
+  position: sticky;
+  z-index: 1;
   display: flex;
   width: 100%;
+  margin: auto;
   top: 0;
-  background-color: hsla(181, 91%, 99%, 0.5);
-  overflow: hidden;
   .bannerMarquee {
     display: flex;
     width: 100%;
+    background-color: hsla(181, 91%, 99%, 0.5);
     .bannerText {
       color: #2f2c2c;
       font-size: 1.5rem;
