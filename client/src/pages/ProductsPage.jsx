@@ -3,6 +3,9 @@ import { useProductsStore } from "../stores/productsStore"
 import ParticlesBackground from "../components/ParticlesBackground";
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
+import Loading from "../components/Loading";
+import { Suspense } from "react";
+import { resolvePath } from "react-router-dom";
 
 const ProductsPage = () => {
     const productStore = useProductsStore((state) => state.products);
@@ -11,18 +14,25 @@ const ProductsPage = () => {
         return (
             <div key={index} className={styles.allProductsContainer}
                 onClick={() => console.log(product)}>
-                <img src={product.images[0]} />
+                <img className={styles.productImg} src={product.images[0]} />
             </div>
         )
     })
     return (
         <>
             <ParticlesBackground />
+
             <div className={styles.productsPageContainer}>
-                <Banner />
-                <Navbar />
-                {productsComponentArray}
-            </div>
+                <div className={styles.headerContainer}>
+                    <Banner />
+                    <Navbar />
+                </div>
+                <Suspense fallback={<Loading />}>
+                    <div className={styles.productsList}>
+                        {productsComponentArray}
+                    </div>
+                </Suspense>
+            </div >
         </>
     )
 }
