@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import styles from "./SignIn.module.scss"
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
@@ -32,7 +32,6 @@ const SignIn = () => {
                 <Navbar />
             </div>
             <section className={styles.loginPageContainer}>
-
                 <div className={styles.authCard}>
                     <h1 className={styles.authCardHeader}>Login</h1>
                     <form className={styles.authForm} onSubmit={handleSubmit}>
