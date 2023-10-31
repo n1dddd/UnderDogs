@@ -8,9 +8,11 @@ const HomePage = () => {
     return (
         <>
             <ParticlesBackground />
-            <div className={styles.HomePageContainer}>
+            <div className={styles.headerContainer}>
                 <Banner />
                 <Navbar />
+            </div>
+            <div className={styles.HomePageContainer}>
                 < img src={happyFace} className={styles.bgImg} />
             </div>
         </>
