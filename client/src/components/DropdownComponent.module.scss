@@ -1,0 +1,36 @@
+.dropDown {
+  display: flex;
+  flex-direction: column;
+  .dropDownHeader {
+    display: flex;
+    .dropDownHeaderText {
+      display: flex;
+      font-size: 1.25rem;
+      @media only screen and (min-width: 900px) {
+        font-size: 3rem;
+      }
+    }
+  }
+  .dropDownBody {
+    margin-top: 1.94rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    background-color: hsla(181, 91%, 99%, 0.8);
+    gap: 1rem;
+    font-size: 1rem;
+    @media only screen and (min-width: 900px) {
+      font-size: 2rem;
+      margin-top: 3.45rem;
+    }
+    .categoryText {
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.9);
+      }
+    }
+  }
+  display: flex;
+  font-weight: 700;
+}
