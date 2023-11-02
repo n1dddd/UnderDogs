@@ -1,34 +1,43 @@
 .loginPageContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   margin: auto;
   width: 100vw;
   height: 100vh;
-  
+  margin-top: 2rem;
+  @media only screen and (min-width: 900px) {
+    margin-top: 5rem;
+  }
   .authCard {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    width: 500px;
-    height: 700px;
+    position: absolute;
     border-radius: 0.5rem;
     background-color: hsla(0, 0%, 65%, 0.4);
+    width: 80%;
+    height: 80%;
+    @media only screen and (min-width: 900px) {
+      width: 500px;
+      height: 700px;
+    }
     filter: drop-shadow(10px 10px 5px hsla(181, 91%, 99%, 0.6));
     &:hover {
       background-color: hsla(181, 91%, 99%, 0.3);
     }
     .authCardHeader {
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
     .authForm {
-      margin-top: 2rem;
+      margin-top: 1rem;
       gap: 3rem;
       display: flex;
       text-align: center;
       flex-direction: column;
+      font-weight: 700;
       .emailPassInput {
         display: flex;
         gap: 2rem;
@@ -39,6 +48,7 @@
         }
       }
       .authButton {
+        font-size: 1rem;
         height: 3rem;
         border-radius: 0.5rem;
         font-weight: 700;
@@ -55,8 +65,11 @@
 }
 .headerContainer {
   display: flex;
+  position: absolute;
+  z-index: 2;
   position: sticky;
   top: 0;
   width: 100%;
   flex-direction: column;
+  margin: auto;
 }
