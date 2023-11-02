@@ -5,6 +5,7 @@ import { UserAuth } from '../context/AuthContext';
 import user from "/icons/userprofile.svg"
 import logoutIcon from "/icons/logout.svg"
 import DropdownComponent from "./DropdownComponent";
+import homePageButton from "../assets/2d2.gif"
 const Navbar = () => {
     const authUser = useUserStore((state) => state.user);
     const { logout } = UserAuth();
@@ -28,6 +29,7 @@ const Navbar = () => {
                     <DropdownComponent />
                     <p className={styles.menuHeader}>Connect</p>
                 </div>
+                <img className={styles.homePageButton} src={homePageButton} />
                 <div className={styles.rightSideMenuBar} onClick={() => navigate('/login')}>
                     <p className={styles.menuHeader}>Login</p>
                     <img className={styles.userIcon} src={user} />
