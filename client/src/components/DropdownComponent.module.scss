@@ -6,14 +6,17 @@
     .dropDownHeaderText {
       color: #e0e0e0;
       display: flex;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.2);
+      }
       @media only screen and (min-width: 900px) {
-        font-size: 3rem;
+        font-size: 2rem;
       }
     }
   }
   .dropDownBody {
-    margin-top: 1.94rem;
+    margin-top: 1.4rem;
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -23,8 +26,8 @@
     gap: 1rem;
     font-size: 1rem;
     @media only screen and (min-width: 900px) {
-      font-size: 2rem;
-      margin-top: 3.45rem;
+      font-size: 1.5rem;
+      margin-top: 2rem;
     }
     .categoryText {
       color: hsla(0, 0%, 4%, 1);
