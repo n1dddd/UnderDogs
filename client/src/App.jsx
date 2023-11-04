@@ -2,7 +2,7 @@ import HomePage from './pages/HomePage'
 import "./scss/styles.scss"
 import { useCategoriesStore } from './stores/categoriesStore.js';
 import { useProductsStore } from "./stores/productsStore.js";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase.js"
 import { Routes, Route } from 'react-router-dom';
@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp";
 import { AuthContextProvider } from "../src/context/AuthContext"
 import ProductPage from './pages/ProductPage';
 import ProductsPage from './pages/ProductsPage';
+import About from './pages/About';s
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
     <AuthContextProvider>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/products" element={<ProductsPage />} />
