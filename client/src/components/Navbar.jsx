@@ -27,7 +27,7 @@ const Navbar = () => {
             <nav className={styles.websiteCategories}>
                 <div className={styles.leftSideMenuBar}>
                     <DropdownComponent />
-                    <p className={styles.menuHeader}>Connect</p>
+                    <p onClick={() => navigate('/About')} className={styles.menuHeader}>About</p>
                 </div>
                 <img className={styles.homePageButton} src={homePageButton} />
                 <div className={styles.rightSideMenuBar} onClick={() => navigate('/login')}>
@@ -41,8 +41,8 @@ const Navbar = () => {
             <nav className={styles.websiteCategories}>
                 <div className={styles.leftSideMenuBar}>
                     <DropdownComponent />
-                    <p className={styles.menuHeader}>Connect</p>
-                </div>
+                    <p onClick={() => navigate('/About')} className={styles.menuHeader}>About</p>
+                 </div>
                 <div className={styles.rightSideMenuBar} onClick={() => handleLogout()}>
                     <p className={styles.userStatusHeader}>Logout</p>
                     <img className={styles.logoutIcon} src={logoutIcon} />
