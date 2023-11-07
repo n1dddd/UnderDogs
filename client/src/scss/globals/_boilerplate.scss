@@ -20,3 +20,9 @@ h1 {
     font-size: 5rem;
   }
 }
+h2 {
+  font-size: 1rem;
+  @media only screen and (min-width: 900px) {
+    font-size: 2rem;
+  }
+}
