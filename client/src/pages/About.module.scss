@@ -1,12 +1,14 @@
 .aboutContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: auto;
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  @media only screen and (min-width: 900px) {
+    justify-content: center;
+  }
   .contentContainer {
     display: flex;
     width: 80%;
