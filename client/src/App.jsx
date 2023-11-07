@@ -11,7 +11,7 @@ import SignUp from "./pages/SignUp";
 import { AuthContextProvider } from "../src/context/AuthContext"
 import ProductPage from './pages/ProductPage';
 import ProductsPage from './pages/ProductsPage';
-import About from './pages/About';s
+import About from './pages/About';
 
 
 function App() {
