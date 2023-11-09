@@ -7,8 +7,10 @@ import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 import Loading from "../components/Loading";
 import { Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProductsPage = () => {
+    const navigate = useNavigate();
     const statefulProducts = useProductsStore((state) => state.filteredProducts);
     const activeCategory = useCategoriesStore((state) => state.activeCategory);
     const products = useProductsStore((state) => state.products);
@@ -26,7 +28,7 @@ const ProductsPage = () => {
     const filteredProductComponentArray = statefulProducts.map((product, index) => {
         return (
             <div key={index} className={styles.allProductsContainer}
-                onClick={() => console.log(product)}>
+                onClick={() => navigate(`/products/${product.id}`)}>
                 <img className={styles.productImg} src={product.images[0]} />
             </div>
         )
@@ -34,7 +36,7 @@ const ProductsPage = () => {
     const allProductsComponentArray = products.map((product, index) => {
         return (
             <div key={index} className={styles.allProductsContainer}
-                onClick={() => console.log(product)}>
+                onClick={() => navigate(`/products/${product.id}`)}>
                 <img className={styles.productImg} src={product.images[0]} />
             </div>
         )
