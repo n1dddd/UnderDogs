@@ -3,37 +3,51 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 80%;
-  height: 100vh;
-  text-align: justify;
-  .displayProductHeader {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    @media only screen and (min-width: 900px) {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-    }
+  gap: 4rem;
+  width: 100vw;
+  height: 90vh;
+  overflow: auto;
+  @media only screen and (min-width: 900px) {
+    flex-direction: row;
   }
-  .displayImg {
+  .productImgContainer {
     display: flex;
-    width: 350px;
-    height: 350px;
-    @media only screen and (min-width: 900px) {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+    width: fit-content;
+    height: fit-content;
+    .displayImg {
+      width: 300px;
+      height: 300px;
+      @media only screen and (min-width: 900px) {
+        width: 600px;
+        height: 600px;
+      }
     }
   }
-  .displayProductDescription {
+  .productDescriptorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsla(181, 91%, 99%, 0.9);
+    width: 90%;
     @media only screen and (min-width: 900px) {
       width: 50%;
-      margin-top: 1rem;
-      margin-bottom: 1ch;
     }
-    font-size: 1.5rem;
-  }
-  .displayProductPrice {
-    font-size: 1.5rem;
-    @media only screen and (min-width: 900px) {
+    .displayProductHeader {
+      display: flex;
+      margin-top: 1rem;
+      text-decoration: underline;
+    }
+
+    .displayProductDescription {
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+      @media only screen and (min-width: 900px) {
+        font-size: 2rem;
+      }
+    }
+    .displayProductPrice {
+      font-size: 1.5rem;
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
