@@ -49,11 +49,9 @@ const ProductsPage = () => {
                     <Banner />
                     <Navbar />
                 </div>
-                <Suspense fallback={<Loading />}>
-                    <div className={styles.productsList}>
-                        {activeCategory ? filteredProductComponentArray : allProductsComponentArray}
-                    </div>
-                </Suspense>
+                <div className={styles.productsList}>
+                    {activeCategory ? filteredProductComponentArray : allProductsComponentArray}
+                </div>
             </div >
         </>
     )
