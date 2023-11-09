@@ -23,8 +23,8 @@ const About = () => {
                         to innovate & inspire the next generation.
                     </h2>
                     <h2 className={styles.aboutText2}>
-                        We're more than just a producer collective; we're a mindset.
-                        UNDERDOGS, It's not just a name; it's who we are.</h2>
+                        We&apos;re more than just a producer collective; we&apos;re a mindset.
+                        UNDERDOGS, It&apos;s not just a name; it&apos;s who we are.</h2>
                     <img className={styles.aboutGif} src={aboutGif} />
                 </div>
             </div>
