@@ -1,10 +1,13 @@
-import React, { Suspense, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from "./ProductPage.module.scss"
 import { doc, getDoc, getDocs, collection } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { useProductsStore } from '../stores/productsStore';
 import Loading from '../components/Loading';
+import ParticlesBackground from '../components/ParticlesBackground';
+import Banner from '../components/Banner';
+import Navbar from '../components/Navbar';
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -28,21 +31,43 @@ const ProductPage = () => {
     )
   } else if (activeProduct.unit_amount === 0) {
     return (
-      <div className={styles.displayProductContainer}>
-        <img className={styles.displayImg} src={activeProduct.images} />
-        <h1 className={styles.displayProductHeader}>{activeProduct.name}</h1>
-        <p className={styles.displayProductDescription}>{activeProduct.description}</p>
-        <p className={styles.displayProductPrice}>${activeProduct.unit_amount / 100}</p>
-      </div >
+      <>
+        <ParticlesBackground />
+        <div className={styles.headerContainer}>
+          <Banner />
+          <Navbar />
+        </div>
+        <div className={styles.displayProductContainer}>
+          <div className={styles.productImgContainer}>
+            <img className={styles.displayImg} src={activeProduct.images} />
+          </div>
+          <div className={styles.productDescriptorContainer}>
+            <h2 className={styles.displayProductHeader}>{activeProduct.name}</h2>
+            <p className={styles.displayProductDescription}>{activeProduct.description}</p>
+            <p className={styles.displayProductPrice}>${activeProduct.unit_amount / 100}</p>
+          </div>
+        </div >
+      </>
     )
   } else {
     return (
-      <div className={styles.displayProductContainer}>
-        <img className={styles.displayImg} src={activeProduct.images} />
-        <h1 className={styles.displayProductHeader}>{activeProduct.name}</h1>
-        <p className={styles.displayProductDescription}>{activeProduct.description}</p>
-        <p className={styles.displayProductPrice}>${activeProduct.unit_amount / 100}</p>
-      </div >
+      <>
+        <ParticlesBackground />
+        <div className={styles.headerContainer}>
+          <Banner />
+          <Navbar />
+        </div>
+        <div className={styles.displayProductContainer}>
+          <div className={styles.productImgContainer}>
+            <img className={styles.displayImg} src={activeProduct.images} />
+          </div>
+          <div className={styles.productDescriptorContainer}>
+            <h2 className={styles.displayProductHeader}>{activeProduct.name}</h2>
+            <p className={styles.displayProductDescription}>{activeProduct.description}</p>
+            <p className={styles.displayProductPrice}>${activeProduct.unit_amount / 100}</p>
+          </div>
+        </div >
+      </>
     )
   }
 
