@@ -4,7 +4,8 @@ html,
 body {
   box-sizing: border-box;
   font-family: util.$font;
-  overflow: hidden;
+  overflow: auto;
+  height: 100%;
 }
 *,
 *::before,
