@@ -31,7 +31,7 @@ const ProductPage = () => {
     )
   } else if (activeProduct.unit_amount === 0) {
     return (
-      <>
+      <div className={styles.productPageContainer}>
         <ParticlesBackground />
         <div className={styles.headerContainer}>
           <Banner />
@@ -47,7 +47,7 @@ const ProductPage = () => {
             <p className={styles.displayProductPrice}>${activeProduct.unit_amount / 100}</p>
           </div>
         </div >
-      </>
+      </div>
     )
   } else {
     return (

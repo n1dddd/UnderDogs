@@ -1,59 +1,65 @@
-.displayProductContainer {
+.productPageContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100vh;
   flex-direction: column;
-  gap: 4rem;
-  width: 100vw;
-  height: 90vh;
-  overflow: auto;
-  @media only screen and (min-width: 900px) {
-    flex-direction: row;
-  }
-  .productImgContainer {
+  .displayProductContainer {
     display: flex;
-    width: fit-content;
-    height: fit-content;
-    .displayImg {
-      width: 300px;
-      height: 300px;
-      @media only screen and (min-width: 900px) {
-        width: 600px;
-        height: 600px;
-      }
-    }
-  }
-  .productDescriptorContainer {
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: hsla(181, 91%, 99%, 0.9);
-    width: 90%;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 4rem;
+    overflow: auto;
     @media only screen and (min-width: 900px) {
-      width: 50%;
+      flex-direction: row;
     }
-    .displayProductHeader {
+    .productImgContainer {
       display: flex;
-      margin-top: 1rem;
-      text-decoration: underline;
-    }
-
-    .displayProductDescription {
-      font-size: 1rem;
-      text-align: center;
-      margin-top: 1rem;
-      @media only screen and (min-width: 900px) {
-        font-size: 2rem;
+      width: fit-content;
+      height: fit-content;
+      .displayImg {
+        width: 300px;
+        height: 300px;
+        @media only screen and (min-width: 900px) {
+          width: 600px;
+          height: 600px;
+        }
       }
     }
-    .displayProductPrice {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+    .productDescriptorContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: hsla(181, 91%, 99%, 0.9);
+      width: 90%;
+      @media only screen and (min-width: 900px) {
+        width: 50%;
+      }
+      .displayProductHeader {
+        display: flex;
+        margin-top: 1rem;
+        text-decoration: underline;
+      }
+
+      .displayProductDescription {
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+        @media only screen and (min-width: 900px) {
+          font-size: 2rem;
+        }
+      }
+      .displayProductPrice {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
     }
-  }
-  .cartButton {
-    width: 200px;
-    height: 200px;
+    .cartButton {
+      width: 200px;
+      height: 200px;
+    }
   }
 }
