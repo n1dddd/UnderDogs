@@ -49,7 +49,7 @@ const SignIn = () => {
                         </div>
                         <button className={styles.authButton}>Login</button>
                     </form>
-                    <p className={styles.authRoute}>Don't have an account? <Link to="/sign_up" className={styles.linkUnderline} >Sign Up.</Link></p>
+                    <p className={styles.authRoute}>Don&apost have an account? <Link to="/sign_up" className={styles.linkUnderline} >Sign Up.</Link></p>
                 </div>
             </section>
         </>
