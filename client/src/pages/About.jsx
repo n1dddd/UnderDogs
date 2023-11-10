@@ -8,11 +8,11 @@ const About = () => {
     return (
         <>
             <ParticlesBackground />
-            <div className={styles.headerContainer}>
-                <Banner />
-                <Navbar />
-            </div>
             <div className={styles.aboutContainer}>
+                <div className={styles.headerContainer}>
+                    <Banner />
+                    <Navbar />
+                </div>
                 <div className={styles.contentContainer}>
                     <h1 className={styles.aboutHeader}>ABOUT</h1>
                     <h2 className={styles.aboutText}>
