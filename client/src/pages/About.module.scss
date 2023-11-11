@@ -1,45 +1,51 @@
-.aboutContainer {
+.aboutPageContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
   width: 100%;
-  gap: 4rem;
-  margin-bottom: 4rem;
-  overflow: auto;
-  .headerContainer {
+  height: 100vh;
+  .aboutContentContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    height: 100%;
     width: 100%;
-    margin: 0;
-  }
-  .contentContainer {
-    display: flex;
-    width: 80%;
-    background-color: hsla(181, 91%, 99%, 1);
-    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 4rem;
     overflow: auto;
-    .aboutHeader {
+    .headerContainer {
       display: flex;
-      margin: 2rem 0 0 2rem;
-      width: fit-content;
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
     }
-    .aboutText {
+    .contentContainer {
       display: flex;
-      text-align: justify;
-      margin: 2rem 2rem 0rem 2rem;
-    }
-    .aboutText2 {
-      display: flex;
-      text-align: justify;
-      margin: 2rem 2rem 0rem 2rem;
-    }
-    .aboutGif {
-      display: flex;
-      align-self: center;
-      width: 250px;
-      height: 250px;
-      margin-top: 1rem;
+      width: 80%;
+      background-color: hsla(0, 0%, 0%, 0.9);
+      flex-direction: column;
+      overflow: auto;
+      color: hsla(0, 0%, 100%, 0.9);
+      .aboutHeader {
+        display: flex;
+        margin: 2rem 0 0 2rem;
+        width: fit-content;
+      }
+      .aboutText {
+        display: flex;
+        text-align: justify;
+        margin: 2rem 2rem 0rem 2rem;
+      }
+      .aboutText2 {
+        display: flex;
+        text-align: justify;
+        margin: 2rem 2rem 0rem 2rem;
+      }
+      .aboutGif {
+        display: flex;
+        align-self: center;
+        width: 250px;
+        height: 250px;
+        margin-top: 1rem;
+      }
     }
   }
 }
