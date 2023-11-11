@@ -8,6 +8,8 @@ import Loading from '../components/Loading';
 import ParticlesBackground from '../components/ParticlesBackground';
 import Banner from '../components/Banner';
 import Navbar from '../components/Navbar';
+import ProductCartButton from '../ArchivedComponents/ProductCartButton';
+import DownloadButtonComponent from '../ArchivedComponents/DownloadButtonComponent';
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -45,13 +47,14 @@ const ProductPage = () => {
             <h2 className={styles.displayProductHeader}>{activeProduct.name}</h2>
             <p className={styles.displayProductDescription}>{activeProduct.description}</p>
             <p className={styles.displayProductPrice}>${activeProduct.unit_amount / 100}</p>
+            <DownloadButtonComponent product={activeProduct} />
           </div>
         </div >
       </div>
     )
   } else {
     return (
-      <>
+      <div className={styles.productPageContainer}>
         <ParticlesBackground />
         <div className={styles.headerContainer}>
           <Banner />
@@ -65,9 +68,10 @@ const ProductPage = () => {
             <h2 className={styles.displayProductHeader}>{activeProduct.name}</h2>
             <p className={styles.displayProductDescription}>{activeProduct.description}</p>
             <p className={styles.displayProductPrice}>${activeProduct.unit_amount / 100}</p>
+            <ProductCartButton product={activeProduct} />
           </div>
         </div >
-      </>
+      </div>
     )
   }
 

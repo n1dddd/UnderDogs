@@ -32,8 +32,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: hsla(181, 91%, 99%, 0.9);
+      background-color: hsla(0, 0%, 0%, 0.9);
       width: 90%;
+      color: hsla(0, 0%, 100%, 0.9);
       @media only screen and (min-width: 900px) {
         width: 50%;
       }
