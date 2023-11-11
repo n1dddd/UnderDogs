@@ -6,6 +6,7 @@ import user from "/icons/userprofile.svg"
 import logoutIcon from "/icons/logout.svg"
 import DropdownComponent from "./DropdownComponent";
 import homePageButton from "../assets/2d2.gif"
+import cartButton from "/icons/cartIcon.svg"
 const Navbar = () => {
     const authUser = useUserStore((state) => state.user);
     const { logout } = UserAuth();
@@ -31,8 +32,14 @@ const Navbar = () => {
                 </div>
                 <img className={styles.homePageButton} src={homePageButton} />
                 <div className={styles.rightSideMenuBar} onClick={() => navigate('/login')}>
-                    <p className={styles.menuHeader}>Login</p>
-                    <img className={styles.userIcon} src={user} />
+                    <div className={styles.authStatusSection}>
+                        <p className={styles.userStatusHeader}>Login</p>
+                        <img className={styles.userIcon} src={user} />
+                    </div>
+                    <div className={styles.cartSection}>
+                        <p className={styles.cartHeader}>Cart</p>
+                        <img className={styles.cartIcon} src={cartButton} />
+                    </div>
                 </div>
             </nav >
         )
@@ -42,10 +49,16 @@ const Navbar = () => {
                 <div className={styles.leftSideMenuBar}>
                     <DropdownComponent />
                     <p onClick={() => navigate('/About')} className={styles.menuHeader}>About</p>
-                 </div>
+                </div>
                 <div className={styles.rightSideMenuBar} onClick={() => handleLogout()}>
-                    <p className={styles.userStatusHeader}>Logout</p>
-                    <img className={styles.logoutIcon} src={logoutIcon} />
+                    <div className={styles.loginSection}>
+                        <p className={styles.authStatusSection}>Logout</p>
+                        <img className={styles.logoutIcon} src={logoutIcon} />
+                    </div>
+                    <div className={styles.cartSection}>
+                        <p className={styles.cartHeader}>Cart</p>
+                        <img className={styles.cartIcon} src={cartButton} />
+                    </div>
                 </div>
             </nav>
         )

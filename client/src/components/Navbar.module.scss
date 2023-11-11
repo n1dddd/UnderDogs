@@ -6,7 +6,7 @@
   justify-content: space-evenly;
   flex-direction: row;
   color: #2f2c2c;
-  background-color: hsla(0, 0%, 4%, 1);
+  background-color: hsl(0, 0%, 4%);
   width: 100%;
   margin: auto;
   @media only screen and (min-width: 600px) {
@@ -18,35 +18,57 @@
   .rightSideMenuBar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     font-size: 0.9rem;
     color: #e0e0e0;
     font-size: 1.1rem;
     width: 33%;
-    .logoutIcon {
-      color: #e0e0e0;
-      height: 40px;
-      width: 40px;
+    .authStatusSection {
+      display: flex;
       @media only screen and (min-width: 900px) {
-        height: 40px;
-        width: 40px;
+        font-size: 2rem;
+        gap: 1rem;
+      }
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.2);
+      }
+      .userStatusHeader {
+        display: flex;
+        align-self: center;
+        width: fill;
+      }
+      .logoutIcon {
+        color: #e0e0e0;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+      .userIcon {
+        display: flex;
+        height: 2.5rem;
+        width: 2.5rem;
+        color: #e0e0e0;
       }
     }
-    @media only screen and (min-width: 900px) {
-      font-size: 2rem;
-      gap: 1rem;
-    }
-    &:hover {
-      background-color: hsla(0, 0%, 100%, 0.2);
-    }
-    .userIcon {
+    .cartSection {
       display: flex;
-      height: 40px;
-      width: 40px;
-      color: #e0e0e0;
+      justify-content: center;
+      align-items: center;
       @media only screen and (min-width: 900px) {
-        height: 55px;
-        width: 55px;
+        font-size: 2rem;
+        gap: 1rem;
+      }
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.2);
+      }
+      .cartHeader {
+        display: flex;
+        width: fill;
+      }
+      .cartIcon {
+        display: flex;
+        height: 2.5rem;
+        width: 2.5rem;
+        color: #e0e0e0;
       }
     }
   }
