@@ -1,6 +1,6 @@
 import { getStorage, ref, getDownloadURL } from "firebase/storage"
 import { useUserStore } from "../stores/userStore"
-import DlIcon from '/icons/dlIcon.png'
+import DlIcon from '/icons/dlicon.svg'
 import styles from "./DownloadButtonComponent.module.scss"
 
 const DownloadButtonComponent = (product) => {
