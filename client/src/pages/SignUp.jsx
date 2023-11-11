@@ -26,13 +26,14 @@ const SignUp = () => {
         }
     }
     return (
-        <>
-            <ParticlesBackground />
-            <div className={styles.headerContainer}>
-                <Banner />
-                <Navbar />
-            </div>
-            <section className={styles.signUpPageContainer}>
+        <section className={styles.signUpPageContainer}>
+            <div className={styles.signUpContent}>
+                <ParticlesBackground />
+                <div className={styles.headerContainer}>
+                    <Banner />
+                    <Navbar />
+                </div>
+
                 <div className={styles.authCard}>
                     <h1 className={styles.authCardHeader}>Sign Up</h1>
                     <form className={styles.authForm} onSubmit={handleSubmit}>
@@ -52,8 +53,9 @@ const SignUp = () => {
                     </form>
                     <p className={styles.authRoute}>Already have an account? <Link to="/login" className={styles.linkUnderline} >Sign In.</Link></p>
                 </div>
-            </section>
-        </>
+            </div >
+        </section>
+
     )
 }
 

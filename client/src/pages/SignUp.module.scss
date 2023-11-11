@@ -1,69 +1,70 @@
 .signUpPageContainer {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: auto;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
-  .authCard {
+  .signUpContent {
     display: flex;
+    height: 100%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    border-radius: 0.5rem;
-    background-color: hsla(0, 0%, 65%, 0.6);
-    width: 80%;
-    height: 80%;
-    margin-top: 2rem;
-    @media only screen and (min-width: 900px) {
-      width: 500px;
-      height: 700px;
-      margin-top: 5rem;
-    }
-    filter: drop-shadow(10px 10px 5px hsla(181, 91%, 99%, 0.6));
-    &:hover {
-      background-color: hsla(181, 91%, 99%, 0.3);
-    }
-    .authCardHeader {
-      margin-top: 2rem;
-    }
-    .authForm {
-      margin-top: 2rem;
-      gap: 3rem;
+    .headerContainer {
       display: flex;
-      text-align: center;
       flex-direction: column;
-      .emailPassInput {
+      width: 100%;
+      margin: 0;
+    }
+    .authCard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      border-radius: 0.5rem;
+      background-color: hsla(0, 0%, 65%, 0.6);
+      width: 80%;
+      height: 80%;
+      margin-top: 2rem;
+      @media only screen and (min-width: 900px) {
+        width: 500px;
+        height: 700px;
+        margin-top: 5rem;
+      }
+      filter: drop-shadow(10px 10px 5px hsla(181, 91%, 99%, 0.6));
+      &:hover {
+        background-color: hsla(181, 91%, 99%, 0.3);
+      }
+      .authCardHeader {
+        margin-top: 2rem;
+      }
+      .authForm {
+        margin-top: 2rem;
+        gap: 3rem;
         display: flex;
-        gap: 2rem;
+        text-align: center;
         flex-direction: column;
-        .inputField {
+        .emailPassInput {
+          display: flex;
+          gap: 2rem;
+          flex-direction: column;
+          .inputField {
+            height: 3rem;
+            border-radius: 0.5rem;
+          }
+        }
+        .authButton {
           height: 3rem;
           border-radius: 0.5rem;
+          font-weight: 700;
         }
       }
-      .authButton {
-        height: 3rem;
-        border-radius: 0.5rem;
-        font-weight: 700;
-      }
-    }
-    .authRoute {
-      margin-top: 3rem;
-      gap: 1rem;
-      .linkUnderline {
-        text-decoration: underline;
+      .authRoute {
+        margin-top: 3rem;
+        gap: 1rem;
+        .linkUnderline {
+          text-decoration: underline;
+        }
       }
     }
   }
-}
-.headerContainer {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  flex-direction: column;
 }
