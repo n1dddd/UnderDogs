@@ -7,8 +7,11 @@ import logoutIcon from "/icons/logout.svg"
 import DropdownComponent from "./DropdownComponent";
 import homePageButton from "../assets/2d2.gif"
 import cartButton from "/icons/cartIcon.svg"
+import { useCartStore } from "../stores/cartStore.js";
 const Navbar = () => {
     const authUser = useUserStore((state) => state.user);
+    const cartItems = useCartStore((state) => state.cart);
+    const cartItemsCount = cartItems.length;
     const { logout } = UserAuth();
     const navigate = useNavigate();
     const handleLogout = async () => {
@@ -30,15 +33,16 @@ const Navbar = () => {
                     <DropdownComponent />
                     <p onClick={() => navigate('/About')} className={styles.menuHeader}>About</p>
                 </div>
-                <img className={styles.homePageButton} src={homePageButton} />
-                <div className={styles.rightSideMenuBar} onClick={() => navigate('/login')}>
-                    <div className={styles.authStatusSection}>
+                <img className={styles.homePageButton} src={homePageButton} onClick={() => navigate('/')} />
+                <div className={styles.rightSideMenuBar}>
+                    <div className={styles.authStatusSection} onClick={() => navigate('/login')}>
                         <p className={styles.userStatusHeader}>Login</p>
                         <img className={styles.userIcon} src={user} />
                     </div>
-                    <div className={styles.cartSection}>
-                        <p className={styles.cartHeader}>Cart</p>
+                    <div className={styles.cartSection} onClick={() => navigate('/cart')}>
+                        <p className={styles.cartHeader}>Cart </p>
                         <img className={styles.cartIcon} src={cartButton} />
+                        ({cartItemsCount})
                     </div>
                 </div>
             </nav >
@@ -50,14 +54,16 @@ const Navbar = () => {
                     <DropdownComponent />
                     <p onClick={() => navigate('/About')} className={styles.menuHeader}>About</p>
                 </div>
-                <div className={styles.rightSideMenuBar} onClick={() => handleLogout()}>
-                    <div className={styles.loginSection}>
-                        <p className={styles.authStatusSection}>Logout</p>
+                <img className={styles.homePageButton} src={homePageButton} />
+                <div className={styles.rightSideMenuBar} >
+                    <div className={styles.authStatusSection} onClick={() => handleLogout()}>
+                        <p className={styles.userStatusHeader}>Logout</p>
                         <img className={styles.logoutIcon} src={logoutIcon} />
                     </div>
                     <div className={styles.cartSection}>
-                        <p className={styles.cartHeader}>Cart</p>
+                        <p className={styles.cartHeader}>Cart {cartItems}</p>
                         <img className={styles.cartIcon} src={cartButton} />
+                        ({cartItemsCount})
                     </div>
                 </div>
             </nav>
