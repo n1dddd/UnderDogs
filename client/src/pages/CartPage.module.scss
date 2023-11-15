@@ -1,0 +1,19 @@
+.cartPageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  .headerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .cartPageContent {
+    display: flex;
+    align-self: center;
+    width: 80%;
+    height: 80%;
+    margin-top: 2rem;
+    background-color: hsla(0, 0%, 100%, 0.9);
+  }
+}
