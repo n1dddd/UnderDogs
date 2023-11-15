@@ -12,6 +12,7 @@ import { AuthContextProvider } from "../src/context/AuthContext"
 import ProductPage from './pages/ProductPage';
 import ProductsPage from './pages/ProductsPage';
 import About from './pages/About';
+import CartPage from './pages/CartPage.jsx';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductPage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </AuthContextProvider>
   )
