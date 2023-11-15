@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   height: 100vh;
+  overflow: auto;
   .aboutContentContainer {
     display: flex;
     flex-direction: column;
@@ -10,7 +11,6 @@
     width: 100%;
     gap: 4rem;
     margin-bottom: 4rem;
-    overflow: auto;
     .headerContainer {
       display: flex;
       flex-direction: column;
