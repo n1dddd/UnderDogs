@@ -11,9 +11,29 @@
   .cartPageContent {
     display: flex;
     align-self: center;
+    flex-direction: column;
     width: 80%;
     height: 80%;
     margin-top: 2rem;
-    background-color: hsla(0, 0%, 100%, 0.9);
+    background-color: #0a0a0acc;
+    .checkoutContainer {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: center;
+      border-bottom: 1px solid;
+      border-color: hsla(0, 0%, 100%, 0.9);
+      color: hsla(0, 0%, 100%, 0.9);
+      .productFileIcon {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+      .removeX {
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+      }
+    }
   }
 }
