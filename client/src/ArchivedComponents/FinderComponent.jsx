@@ -7,7 +7,7 @@ import FinderComponentCategories from './FinderComponentCategories'
 import ProductComponent from "./ProductComponent";
 import CartSideBar from "./CartSideBar";
 import CartComponent from "./CartComponent";
-import CheckoutBar from "./CheckoutBar";
+import CheckoutBar from "../components/CheckoutBar";
 
 const FinderComponent = () => {
     const setFinderClose = useFinderStore((state) => state.closeFinder)
