@@ -16,24 +16,70 @@
     height: 80%;
     margin-top: 2rem;
     background-color: #0a0a0acc;
-    .checkoutContainer {
+    .cartContainer {
+      display: flex;
       width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      align-items: center;
-      border-bottom: 1px solid;
-      border-color: hsla(0, 0%, 100%, 0.9);
-      color: hsla(0, 0%, 100%, 0.9);
-      .productFileIcon {
+      flex-direction: column;
+      overflow: auto;
+      .checkoutContainer {
+        width: 100%;
         display: flex;
-        width: 200px;
-        height: 200px;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        margin: 2rem 0 2rem 0;
+        border-color: hsla(0, 0%, 100%, 0.9);
+        color: hsla(0, 0%, 100%, 0.9);
+        .productImgContainer {
+          display: flex;
+          width: fit-content;
+          height: fit-content;
+          .productFileIcon {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            @media only screen and (min-width: 900px) {
+              width: 200px;
+              height: 200px;
+            }
+          }
+        }
+        .productName {
+          width: 25%;
+          font-size: 0.7rem;
+          @media only screen and (min-width: 900px) {
+            font-size: 2rem;
+          }
+        }
+        .productPrice {
+          font-size: 0.7rem;
+          @media only screen and (min-width: 900px) {
+            font-size: 2rem;
+          }
+        }
+        .removeX {
+          width: 50px;
+          height: 50px;
+          @media only screen and (min-width: 900px) {
+            width: 100px;
+            height: 100px;
+          }
+          cursor: pointer;
+        }
       }
-      .removeX {
-        width: 150px;
-        height: 150px;
-        cursor: pointer;
+    }
+    .cartContainer::-webkit-scrollbar {
+      width: 15px;
+      background-color: hsla(0, 0%, 100%, 0.6);
+      @media only screen and (min-width: 900px) {
+        width: 20px;
       }
+    }
+    .cartContainer::-webkit-scrollbar-thumb {
+      width: 10px;
+      background-color: #0a0a0acc;
+      border: 1px solid #ccc;
     }
   }
 }

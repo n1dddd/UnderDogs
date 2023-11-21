@@ -5,6 +5,7 @@ import Banner from '../components/Banner';
 import Navbar from '../components/Navbar';
 import styles from "./CartPage.module.scss";
 import XSymbol from "../assets/XSymbol.svg"
+import CheckoutBar from '../components/CheckoutBar';
 
 const CartPage = () => {
     const statefulCart = useCartStore((state) => state.cart)
@@ -14,7 +15,9 @@ const CartPage = () => {
     const productsInCart = statefulCart.map((product, index) => {
         return (
             <div key={index} className={styles.checkoutContainer}>
-                <img className={styles.productFileIcon} src={product.product.images[0]} />
+                <div className={styles.productImgContainer}>
+                    <img className={styles.productFileIcon} src={product.product.images[0]} />
+                </div>
                 <p className={styles.productName}>{product.product.name}</p>
                 <p className={styles.productPrice}>${product.product.unit_amount / 100}</p>
                 <img className={styles.removeX} src={XSymbol} onClick={() => removeFromCart(product)} onTouchStart={() => removeFromCart(product)} />
@@ -30,10 +33,10 @@ const CartPage = () => {
                 <Navbar />
             </div>
             <section className={styles.cartPageContent}>
-                {[productsInCart]}
-                <div className={styles.cartInfo}>
-
+                <div className={styles.cartContainer}>
+                    {productsInCart}
                 </div>
+                <CheckoutBar />
             </section>
         </div>
     )
