@@ -19,7 +19,7 @@ const ProductPage = () => {
     const displayProduct = await getDoc(doc(db, "products", id))
     const productPriceQuerySnapshot = await getDocs(collection(db, "products", id, "prices"))
     productPriceQuerySnapshot.forEach((doc) => {
-      setActiveProduct({ ...displayProduct.data(), unit_amount: doc.data().unit_amount, id: displayProduct.id })
+      setActiveProduct({ ...displayProduct.data(), unit_amount: doc.data().unit_amount, id: displayProduct.id, priceId: doc.id })
     })
   }
   useEffect(() => {
