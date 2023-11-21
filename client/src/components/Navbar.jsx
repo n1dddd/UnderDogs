@@ -54,14 +54,14 @@ const Navbar = () => {
                     <DropdownComponent />
                     <p onClick={() => navigate('/About')} className={styles.menuHeader}>About</p>
                 </div>
-                <img className={styles.homePageButton} src={homePageButton} />
+                <img className={styles.homePageButton} src={homePageButton} onClick={() => navigate('/')} />
                 <div className={styles.rightSideMenuBar} >
                     <div className={styles.authStatusSection} onClick={() => handleLogout()}>
                         <p className={styles.userStatusHeader}>Logout</p>
                         <img className={styles.logoutIcon} src={logoutIcon} />
                     </div>
-                    <div className={styles.cartSection}>
-                        <p className={styles.cartHeader}>Cart {cartItems}</p>
+                    <div className={styles.cartSection} onClick={() => navigate('/cart')}>
+                        <p className={styles.cartHeader}>Cart</p>
                         <img className={styles.cartIcon} src={cartButton} />
                         ({cartItemsCount})
                     </div>
